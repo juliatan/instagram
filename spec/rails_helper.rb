@@ -4,6 +4,9 @@ require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 
+include Warden::Test::Helpers
+Warden.test_mode!
+
 # Added so that doesn't continuously save to Amazon WS S3 everytime test if run
 require 'aws'
 AWS.stub!

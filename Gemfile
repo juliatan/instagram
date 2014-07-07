@@ -22,6 +22,7 @@ end
 
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
