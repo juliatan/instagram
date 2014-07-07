@@ -1,7 +1,14 @@
+<p><%= link_to "Add post", new_post_path %></p>
+
 <% if @posts.any? %>
   <% @posts.each do |post| %>
-    <%= post.title %>
-    <%= post.description %>
+    
+
+    <% if post.image.present? %>
+      <%= image_tag post.image.url, class: "uploaded-pic" %>
+    <% end %>
+    
+    <%= post.title %>: <%= post.description %>
   <% end %>
 
 <% else %>
