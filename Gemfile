@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 group :test, :develop do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'database_cleaner'
 end
 
 gem 'paperclip', github: 'thoughtbot/paperclip'

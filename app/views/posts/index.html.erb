@@ -5,10 +5,11 @@
     
 
     <% if post.image.present? %>
-      <%= image_tag post.image.url, class: "uploaded-pic" %>
+      <%= image_tag post.image.url(:thumb), class: "uploaded-pic" %>
     <% end %>
-    
-    <%= post.title %>: <%= post.description %>
+
+    <p><%= post.title %>:</p>
+    <p><%= post.description %></p>
   <% end %>
 
 <% else %>
