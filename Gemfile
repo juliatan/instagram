@@ -20,6 +20,11 @@ group :test, :develop do
   gem 'database_cleaner'
 end
 
+group :production do
+  # adds useful error messages in heroku logs
+  gem 'rails_12factor'
+end
+
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
 
