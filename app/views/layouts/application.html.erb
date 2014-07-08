@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">InstaClone</a>
+          <%= link_to "InstaClone", posts_path, class: "navbar-brand" %>
         </div>
         <div class="navbar-collapse collapse">
           <% unless user_signed_in? %>
@@ -45,6 +45,8 @@
 
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
@@ -52,7 +54,7 @@
 
     <div class='container'>
       <footer>
-        <p>&copy; Julia Gulia 2014</p>
+        <p>&copy; InstaClone 2014</p>
       </footer>
     </div>
 
