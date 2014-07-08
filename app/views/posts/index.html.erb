@@ -1,20 +1,41 @@
-<p><%= link_to "Add post", new_post_path %></p>
-
-<% if @posts.any? %>
-  <% @posts.each do |post| %>
-    
-
-    <% if post.image.present? %>
-      <%= image_tag post.image.url(:thumb), class: "uploaded-pic" %>
-    <% end %>
-
-    <h3><%= post.title %></h3>
-    <p><%= post.description %></p>
-    <p>Posted by <%= post.user.email %></p>
-  <% end %>
-
-<% else %>
-  No posts yet!
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<% unless user_signed_in? %>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome to InstaClone</h1>
+      <p>This is not a copy of Instagram in any way, shape or form.</p>
+      <p>
+        <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+      </p>
+    </div>
+  </div>
 <% end %>
 
+<div class='container'>
+  <% if @posts.any? %>
+    <div class="row">
+      <% @posts.each do |post| %>
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= post.title %></h3>
+            </div>
+            <div class="panel-body">
+              <% if post.image.present? %>
+                <%= image_tag post.image.url(:thumb), class: "uploaded-pic" %>
+              <% end %>
+              <p><%= post.description %></p>
+            </div>
+            <div class="panel-footer">
+              <p>Posted by <%= post.user.email %></p>
+            </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      No posts yet!
+  <% end %>
 
+  <p><%= link_to "New post", new_post_path, class: 'btn btn-warning btn-lg' %></p>
+</div>

@@ -24,6 +24,7 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
 
 gem 'devise'
+gem 'bootstrap-sass', '~> 3.2.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

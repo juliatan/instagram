@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  padding-top: 60px;
+}
+
+.jumbotron {
+  background: image-url('photo-collage.jpg');
+  /* note: image-url is a SASS helper for Heroku deployment */
+
+  .container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px 50px;
+  }
+}

@@ -6,7 +6,7 @@ describe 'Displaying posts' do
     it 'shows no posts' do
       visit '/posts'
       expect(page).to have_content "No posts yet!"
-      expect(page).to have_link "Add post"
+      expect(page).to have_link "New post"
     end
   end
 
@@ -28,7 +28,7 @@ describe 'Creating posts' do
   context 'when logged out' do
     it 'cannot add a post' do
       visit '/posts'
-      click_link 'Add post'
+      click_link 'New post'
       expect(page).to have_content "Sign in"
       expect(page).not_to have_field "Title"
     end
