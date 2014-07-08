@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  # paperclip
   has_attached_file :image, 
                     styles: {thumb: '300x300>'},
                     :storage => :s3,
@@ -10,4 +11,6 @@ class Post < ActiveRecord::Base
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\z/
 
+  # database associations
+  belongs_to :user
 end
