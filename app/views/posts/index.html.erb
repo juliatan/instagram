@@ -14,7 +14,7 @@
 <div class='container'>
   <% if @posts.any? %>
     <div class="row">
-      <% @posts.each do |post| %>
+      <% @posts.reverse_each do |post| %>
         <div class="col-sm-4">
           <div class="panel panel-default">
             <div class="panel-heading">
