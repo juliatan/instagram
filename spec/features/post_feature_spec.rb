@@ -36,7 +36,7 @@ describe 'Creating posts' do
   context 'when logged in' do
 
     before do
-      julia = User.create(email: 'test@test.com', password: '12345678', password_confirmation: '12345678')
+      julia = User.create(name: 'Julia', email: 'test@test.com', password: '12345678', password_confirmation: '12345678')
       login_as julia
     end
 
@@ -48,7 +48,7 @@ describe 'Creating posts' do
       expect(current_path).to eq '/posts'
       expect(page).to have_content "Cool post"
       expect(page).to have_content "Hello world"
-      expect(page).to have_content "Posted by test@test.com"
+      expect(page).to have_content "Posted by Julia"
       expect(page).not_to have_css "img.uploaded-pic"
     end
 

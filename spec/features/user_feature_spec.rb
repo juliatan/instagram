@@ -5,6 +5,7 @@ describe 'User registration and login' do
   it 'can sign up' do
     visit '/users/sign_up'
     within '.new_user' do
+      fill_in 'Name', with: 'Julia'
       fill_in 'Email', with: 'test@test.com'
       fill_in 'Password', with: '12345678'
       fill_in 'Password confirmation', with: '12345678'
