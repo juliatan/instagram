@@ -13,8 +13,9 @@
 
 <div class='container'>
   <% if @posts.any? %>
+    <% @posts.in_groups_of(3, false) do |post_triplets| %>
     <div class="row">
-      <% @posts.reverse_each do |post| %>
+      <% post_triplets.reverse_each do |post| %>
         <div class="col-sm-4">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -38,6 +39,7 @@
           </div>
         <% end %>
       </div>
+    <% end %>
     <% else %>
       No posts yet!
   <% end %>
