@@ -6,6 +6,7 @@ describe 'Post' do
 
   # place these tags here since tags are created and displayed on posts
   describe '#tag names=' do
+    
     describe 'no tags' do
       it 'does nothing' do
         expect { post.tag_names = '' }.not_to raise_error
@@ -21,8 +22,17 @@ describe 'Post' do
 
     describe 'two tags that do not exist' do
       it 'adds both tags to the post' do
-        post.tag_names = '#yolo #swag'
+        post.tag_names = '#yolo, #swag'
         expect(post.tags.length).to eq 2
+      end
+    end
+
+    describe 'multiple space separated tags' do
+      context 'without spaces' do
+        it 'adds each tag to the post' do
+          post.tag_names = 'yolo,swag'
+          expect(post.tags.length).to eq 2
+        end
       end
     end
 
@@ -39,5 +49,7 @@ describe 'Post' do
         expect(Tag.count).to eq 1
       end
     end
+
+
   end
 end

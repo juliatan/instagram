@@ -16,6 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-tagsinput";
 
 body {
   padding-top: 60px;
@@ -32,6 +33,10 @@ body {
 }
 
 .panel-body {
-
   text-align: center;
+}
+
+.bootstrap-tagsinput {
+  min-width: 100%;
+  height: 34px;
 }

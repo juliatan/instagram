@@ -20,3 +20,4 @@ describe 'Tagging posts' do
 
   end
 end
+
