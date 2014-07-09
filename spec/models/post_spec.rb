@@ -4,6 +4,7 @@ describe 'Post' do
 
   let(:post) { Post.create }
 
+  # place these tags here since tags are created and displayed on posts
   describe '#tag names=' do
     describe 'no tags' do
       it 'does nothing' do
@@ -20,8 +21,22 @@ describe 'Post' do
 
     describe 'two tags that do not exist' do
       it 'adds both tags to the post' do
-        post.tag_names = '#yolo #swag'
+        post.tag_names = '#yolo, #swag'
         expect(post.tags.length).to eq 2
+      end
+    end
+
+    describe 'tag already exists' do
+      
+      # note that ! asks the let to create the tag immediately otherwise
+      # rspec will normally wait until it has to do it (lazy)
+      # let! is the same as before
+      let!(:existing_tag) { Tag.create(name: '#yolo')}
+      
+      it 'reuses existing tag' do
+        post.tag_names = '#yolo' # i.e. new post tagging existing tag
+        expect(post.tags).to include existing_tag
+        expect(Tag.count).to eq 1
       end
     end
   end

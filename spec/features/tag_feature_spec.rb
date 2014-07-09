@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe 'Tagging posts' do
   context 'when logged in' do
@@ -14,7 +14,8 @@ describe 'Tagging posts' do
       fill_in 'Tags', with: '#yolo, #swag'
       click_button 'Post It!'
       expect(current_path).to eq '/posts'
-      expect(page).to have_content "#yolo #swag"
+      expect(page).to have_link "#yolo"
+      expect(page).to have_link "#swag"
     end
 
   end

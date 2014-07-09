@@ -19,7 +19,8 @@ class Post < ActiveRecord::Base
   end
 
   def tag_names=(tag_list)
-    self.tags << Tag.create(name: tag_list)
-    # same as: tags.create(name: tag_list)
+    tag_list.split(', ').each do |tag|
+      tags << Tag.create(name: tag)
+    end
   end
 end
