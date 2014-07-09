@@ -3,4 +3,7 @@ class Tag < ActiveRecord::Base
 
    # added later to ensure no duplicate tag names
    validates :name, uniqueness: true
+
+   validates :name, format: { with: /(^|\s)#([^\s]+)/,
+    message: "Tags must start with # and be separated by a space" }
 end

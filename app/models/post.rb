@@ -16,10 +16,12 @@ class Post < ActiveRecord::Base
   has_and_belongs_to_many :tags
 
   def tag_names
+    # used later when we can edit posts
+    # tags.map(&:name).join(', ')
   end
 
   def tag_names=(tag_list)
-    tag_list.split(', ').each do |tag|
+    tag_list.split(' ').each do |tag|
       tags << Tag.find_or_create_by(name: tag)
       # tags << Tag.create(name: tag)
     end

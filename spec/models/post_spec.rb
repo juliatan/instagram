@@ -21,7 +21,7 @@ describe 'Post' do
 
     describe 'two tags that do not exist' do
       it 'adds both tags to the post' do
-        post.tag_names = '#yolo, #swag'
+        post.tag_names = '#yolo #swag'
         expect(post.tags.length).to eq 2
       end
     end
@@ -32,7 +32,7 @@ describe 'Post' do
       # rspec will normally wait until it has to do it (lazy)
       # let! is the same as before
       let!(:existing_tag) { Tag.create(name: '#yolo')}
-      
+
       it 'reuses existing tag' do
         post.tag_names = '#yolo' # i.e. new post tagging existing tag
         expect(post.tags).to include existing_tag
