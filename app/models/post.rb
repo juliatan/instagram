@@ -13,4 +13,13 @@ class Post < ActiveRecord::Base
 
   # database associations
   belongs_to :user
+  has_and_belongs_to_many :tags
+
+  def tag_names
+  end
+
+  def tag_names=(tag_list)
+    self.tags << Tag.create(name: tag_list)
+    # same as: tags.create(name: tag_list)
+  end
 end
