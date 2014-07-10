@@ -2,9 +2,12 @@ require 'rails_helper'
 
 describe 'Tagging posts' do
   context 'when logged in' do
+    
+    let!(:julia) { User.create(name: 'Julia', email: 'test@test.com', password: '12345678', password_confirmation: '12345678') }
+    
     before do
-      julia = User.create(name: 'Julia', email: 'test@test.com', password: '12345678', password_confirmation: '12345678')
       login_as julia
+      #the alternative to using @julia is let!(:julia) do...
     end
 
     it 'displays tag when a post is added' do
@@ -18,6 +21,16 @@ describe 'Tagging posts' do
       expect(page).to have_link "#swag"
     end
 
+    it 'should filter posts by selected tag' do
+      julia.posts.create(title: 'Pic1', description: 'Hello world', tag_names: '#yolo')
+      julia.posts.create(title: 'Pic2', description: 'Hello world', tag_names: '#swag')
+      visit '/posts'
+      click_link '#yolo'
+      expect(page).to have_content 'Pic1'
+      expect(page).not_to have_content 'Pic2'
+      expect(page).to have_css 'h1', text: 'Posts tagged with #yolo'
+    end
   end
+
 end
 

@@ -13,35 +13,12 @@
 
 <div class='container'>
   <% if @posts.any? %>
-    <% @posts.in_groups_of(3, false) do |post_triplets| %>
     <div class="row">
-      <% post_triplets.reverse_each do |post| %>
-        <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><%= post.title %></h3>
-            </div>
-            <div class="panel-body">
-              <% if post.image.present? %>
-                <%= image_tag post.image.url(:thumb), class: "uploaded-pic" %>
-              <% end %>
-              <p><%= post.description %></p>
-              <p>
-                <% post.tags.each do |tag| %>
-                  <%= link_to tag.name, "#" %>
-                <% end %>
-              </p>
-            </div>
-            <div class="panel-footer">
-              <p>Posted by <%= post.user.name %></p>
-            </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-    <% else %>
-      No posts yet!
+      <% @posts.in_groups_of(3, false).each do |post_triplets| %>
+        <%= render post_triplets %>
+      <% end %>
+    </div>
+  <% else %>
+    No posts yet!
   <% end %>
-
 </div>

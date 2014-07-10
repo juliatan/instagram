@@ -1,0 +1,9 @@
+<div class='container'>
+  <h1>Posts tagged with <%= @tag.name %></h1>
+
+  <div class="row">
+    <% @tag.posts.in_groups_of(3, false).each do |post_triplets| %>
+      <%= render post_triplets %>
+    <% end %>
+  </div>
+</div>
