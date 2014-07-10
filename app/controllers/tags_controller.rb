@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   def show
-    @tag = Tag.find params[:id]
+    hashtag = '#' + params[:id]
+    @tag = Tag.find_by_name hashtag
   end
 end

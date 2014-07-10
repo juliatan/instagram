@@ -13,11 +13,11 @@
 
 <div class='container'>
   <% if @posts.any? %>
-    <div class="row">
-      <% @posts.in_groups_of(3, false).each do |post_triplets| %>
+    <% @posts.in_groups_of(3, false).each do |post_triplets| %>
+      <div class="row">
         <%= render post_triplets %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   <% else %>
     No posts yet!
   <% end %>

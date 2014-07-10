@@ -7,7 +7,6 @@ describe 'Tagging posts' do
     
     before do
       login_as julia
-      #the alternative to using @julia is let!(:julia) do...
     end
 
     it 'displays tag when a post is added' do
@@ -21,16 +20,24 @@ describe 'Tagging posts' do
       expect(page).to have_link "#swag"
     end
 
-    it 'should filter posts by selected tag' do
-      julia.posts.create(title: 'Pic1', description: 'Hello world', tag_names: '#yolo')
-      julia.posts.create(title: 'Pic2', description: 'Hello world', tag_names: '#swag')
-      visit '/posts'
-      click_link '#yolo'
-      expect(page).to have_content 'Pic1'
-      expect(page).not_to have_content 'Pic2'
-      expect(page).to have_css 'h1', text: 'Posts tagged with #yolo'
+    context 'existing posts' do
+      before do
+        julia.posts.create(title: 'Pic1', description: 'Hello world', tag_names: '#yolo')
+        julia.posts.create(title: 'Pic2', description: 'Hello world', tag_names: '#swag')
+        visit '/posts'
+      end
+
+      it 'should filter posts by selected tag' do
+        click_link '#yolo'
+        expect(page).to have_content 'Pic1'
+        expect(page).not_to have_content 'Pic2'
+        expect(page).to have_css 'h1', 'Posts tagged with #yolo'
+      end
+
+      it 'uses the tag name in the url' do
+        click_link '#yolo'
+        expect(current_path).to eq '/tags/yolo'
+      end
     end
   end
-
 end
-

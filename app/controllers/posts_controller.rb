@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @posts = Post.all
+    # shows latest posts first
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def new
