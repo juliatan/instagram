@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     # shows latest posts first
@@ -15,6 +15,10 @@ class PostsController < ApplicationController
     @post.user = current_user
     @post.save!
     redirect_to posts_path
+  end
+
+  def show
+    @post = Post.find params[:id]
   end
 
   private

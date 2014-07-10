@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
 //= require bootstrap-tagsinput
+//= require gmaps
+//= require_tree .

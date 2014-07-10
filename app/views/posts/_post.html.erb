@@ -13,6 +13,11 @@
           <%= link_to tag.name, tag_path(tag) %>
         <% end %>
       </p>
+      <p>
+        <% unless post.address.blank? %>
+          <%= link_to "Map", post_map_path(post), class: "btn btn-success" %>
+        <% end %>
+      </p> 
     </div>
     <div class="panel-footer">
       <p>Posted by <%= post.user.name %></p>
