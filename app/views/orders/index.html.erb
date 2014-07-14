@@ -2,7 +2,7 @@
   <% @orders.each do |order| %>
     <%= order.post.title %>
     <%= order.user.email %>
-    <%= "#{order.created_at}" + '000' + "#{order.id}" %>
+    <%= order.number %>
   <% end %>
 <% else %>
   No orders yet
