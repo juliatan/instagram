@@ -26,6 +26,8 @@ cd instagram
 rails s
 ```
 
+Visit http://localhost:3000/posts in your browser.
+
 How to run tests
 ----------------
 
