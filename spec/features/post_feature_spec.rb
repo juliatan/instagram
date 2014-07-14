@@ -12,7 +12,7 @@ describe 'Displaying posts' do
 
   context 'has posts' do
     before do
-      julia = User.create(email: 'test@test.com', password: '12345678', password_confirmation: '12345678')
+      julia = User.create(name: 'julia', email: 'test@test.com', password: '12345678', password_confirmation: '12345678')
       julia.posts.create(title: 'Cool post', description: 'Hello world')
     end
 

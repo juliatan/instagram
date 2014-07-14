@@ -8,3 +8,4 @@
 
 Admin.delete_all
 Admin.create(email: 't@t.com', password: '12345678', password_confirmation: '12345678')
+

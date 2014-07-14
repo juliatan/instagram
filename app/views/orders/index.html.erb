@@ -1,1 +1,9 @@
-No orders yet
+<% if @orders.any? %>
+  <% @orders.each do |order| %>
+    <%= order.post.title %>
+    <%= order.user.email %>
+    <%= "#{order.created_at}" + '000' + "#{order.id}" %>
+  <% end %>
+<% else %>
+  No orders yet
+<% end %>
