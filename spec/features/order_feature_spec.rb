@@ -15,5 +15,18 @@ describe 'orders page' do
         expect(page).to have_content 'No orders yet'
       end
     end
+
+    context 'with orders' do
+      it 'sees the orders' do
+
+      end
+    end
+  end
+
+  context 'not logged in' do
+    it 'prompts you to sign in' do
+      visit '/orders'
+      expect(page).to have_content 'Sign in'
+    end
   end
 end
