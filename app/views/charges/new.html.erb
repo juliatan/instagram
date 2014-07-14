@@ -1,0 +1,16 @@
+<div class='container'>
+
+  <%= form_tag post_charges_path(@post) do %>
+    <article> 
+      <label class="amount">
+        <span>Amount £10.00</span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.application.secrets.stripe_public_key %>"
+      data-description="A kitten, probably"
+      data-amount="1000">
+    </script>
+  <% end %>
+</div>

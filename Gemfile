@@ -32,6 +32,7 @@ gem 'aws-sdk'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
