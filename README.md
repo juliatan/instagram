@@ -36,7 +36,7 @@ Areas of improvement
 
 Heroku
 ------
-[Instagram-Julia](https://github.com/juliatan/instagram)
+[Instagram-Julia](http://instagram-julia.herokuapp.com/)
 
 How to run the program
 ----------------------
