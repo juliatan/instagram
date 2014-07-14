@@ -16,6 +16,8 @@ Technologies used
 - Poltegeist
 - Amazon Web Services S3
 - Bootstrap
+- Google Maps API
+- Heroku
 
 How to run the program
 ----------------------
