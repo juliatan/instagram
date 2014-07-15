@@ -19,6 +19,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'capybara-email'
+  gem 'mailcatcher'
 end
 
 group :production do
@@ -33,7 +34,6 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-gem 'mailcatcher'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
