@@ -8,7 +8,6 @@ describe 'ordering' do
     let(:admin){ Admin.create email: 'admin@test.com', password: '12345678', password_confirmation: '12345678' }
 
     context 'logged in as admin' do
-
       context 'no orders' do
         
         before do
@@ -54,6 +53,7 @@ describe 'ordering' do
   end
 
   describe 'confirmation email' do
+
     before do
       clear_emails
     end
