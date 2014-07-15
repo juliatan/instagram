@@ -61,6 +61,7 @@ describe 'ordering' do
     it 'sends a confirmation email when an order is created' do
       Order.create(post: post, user: user)
       open_email("test@test.com")
+      expect(current_email.subject).to have_content "Pretty picture"
       expect(current_email).to have_content "You've successfully ordered a Pretty picture"
     end
   end
