@@ -19,6 +19,7 @@ group :test, :development do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'poltergeist'
+  gem 'capybara-email'
 end
 
 group :production do

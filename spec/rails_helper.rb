@@ -5,6 +5,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
+require 'capybara/email/rspec'
 
 # Added so that doesn't continuously save to Amazon WS S3 everytime test if run
 require 'aws'

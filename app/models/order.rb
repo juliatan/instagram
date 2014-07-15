@@ -4,7 +4,7 @@ class Order < ActiveRecord::Base
 
   def number
       date_section = created_at.strftime('%d%m%y')
-      number_section = "%04d" % id
+      number_section = "%04d" % id # alias for sprintf == "%04d".%(id)
 
       date_section + number_section
   end

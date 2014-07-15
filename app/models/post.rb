@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   # paperclip
   has_attached_file :image, 
-                    styles: {thumb: '300x300>'},
+                    styles: {thumb: '300x300>'}, # > is to take the max of either height or width
                     :storage => :s3,
                     :s3_credentials => {
                       :bucket => 'instagram_julia',
