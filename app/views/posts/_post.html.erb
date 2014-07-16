@@ -21,7 +21,7 @@
       <p>
         <%= link_to "Order", new_post_charge_path(post), class: "btn btn-success" %>
         <!-- CREATE a like directly by clicking button, hence POST method -->
-        <%= link_to "❤ #{post.likes.count}", post_likes_path(post), method: :post, class: "btn btn-success" %>
+        <%= link_to "❤ #{post.likes.count}", post_likes_path(post), class: "btn btn-success like-btn" %>
       </p>
     </div>
     <div class="panel-footer">

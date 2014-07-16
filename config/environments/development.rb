@@ -38,4 +38,8 @@ Rails.application.configure do
   #  for mailcatcher gem
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+
+  # for websockets gem
+  config.middleware.delete Rack::Lock
+
 end
