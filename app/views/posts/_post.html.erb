@@ -20,8 +20,8 @@
       </p> 
       <p>
         <%= link_to "Order", new_post_charge_path(post), class: "btn btn-success" %>
-        <!-- CREATE a like directly by clicking button, hence POST method -->
-        <%= link_to "❤ #{post.likes.count}", post_likes_path(post), class: "btn btn-success like-btn" %>
+        <!-- CREATE a like directly by clicking button, hence POST method (which we later remove for websockets) -->
+        <%= link_to "❤ #{post.likes.count}", post_likes_path(post), class: "btn btn-success like-btn", data: { 'post-id' => post.id } %>
       </p>
     </div>
     <div class="panel-footer">

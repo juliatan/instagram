@@ -7,6 +7,11 @@ require 'capybara/email/rspec'
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
 
+Capybara.server do |app, port|
+  require 'rack/handler/thin'
+  Rack::Handler::Thin.run(app, :Port => port)
+end
+
 # Added so that doesn't continuously save to Amazon WS S3 everytime test if run
 require 'aws'
 AWS.stub!
