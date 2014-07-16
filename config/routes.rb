@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :posts do
     resource :map
     resources :charges
+    resources :likes
   end
   resources :orders
 

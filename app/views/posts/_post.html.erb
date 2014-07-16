@@ -18,7 +18,10 @@
           <%= link_to "Map", post_map_path(post), class: "btn btn-success" %>
         <% end %>
       </p> 
-      <p><%= link_to "Order", new_post_charge_path(post), class: "btn btn-success" %></p>
+      <p>
+        <%= link_to "Order", new_post_charge_path(post), class: "btn btn-success" %>
+        <%= link_to '❤ 0', post_likes_path(post), method: :post, class: "btn btn-success" %>
+      </p>
     </div>
     <div class="panel-footer">
       <p>Posted by <%= post.user.name %></p>
