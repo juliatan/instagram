@@ -3,7 +3,10 @@ $(document).ready(function(){
     event.preventDefault();
 
     var url = $(this).attr('href');
-    $.post(url); // post is the POST method which is posting to the CREATE function for like
+    $.post(url, function(error){
+      if(error.message !== undefined)
+      alert(error.message);
+    }); // post is the POST method which is posting to the CREATE function for like
   });
 
   // var connection = new WebSocketRails('localhost:3000/websocket');
