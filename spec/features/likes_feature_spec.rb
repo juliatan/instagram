@@ -1,10 +1,12 @@
 require 'rails_helper'
 
 describe 'liking posts' do
+  # from Factory_Girl
+  let(:julia) { create(:user) }
+
   before do
-    julia = User.create(name: 'Julia', email: 'test@test.com', password: '12345678', password_confirmation: '12345678')
+    # julia = User.create(name: 'Julia', email: 'test@test.com', password: '12345678', password_confirmation: '12345678')
     julia.posts.create(title: 'Test post', description: 'Test description')
-    login_as julia
   end
 
   it 'is initially at 0 likes' do
@@ -20,6 +22,7 @@ describe 'liking posts' do
   end
 
   it 'can only be liked once per user', js: true do
+    login_as julia
     visit '/posts'
     click_link '❤ 0'
     sleep 2

@@ -4,8 +4,9 @@ $(document).ready(function(){
 
     var url = $(this).attr('href');
     $.post(url, function(error){
-      if(error.message !== undefined)
+      if(error.message !== undefined){
       alert(error.message);
+      }
     }); // post is the POST method which is posting to the CREATE function for like
   });
 
@@ -14,7 +15,6 @@ $(document).ready(function(){
   var connection = new WebSocketRails(window.location.host + '/websocket');
   
   var likesChannel = connection.subscribe('likes');
-
   // post below is the data that was passed through in likes_controller WEBSOCKETS line
   likesChannel.bind('new', function(post){
     // console.log(post.new_like_count);

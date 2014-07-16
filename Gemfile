@@ -20,6 +20,7 @@ group :test, :development do
   gem 'poltergeist'
   gem 'capybara-email'
   gem 'mailcatcher'
+  gem 'factory_girl_rails'
 end
 
 group :production do
