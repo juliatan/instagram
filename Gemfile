@@ -37,6 +37,7 @@ gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'websocket-rails'
 gem 'thin'
+gem 'omniauth-facebook'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
