@@ -29,6 +29,9 @@ Technologies used
 - Heroku
 - Websockets
 - Javascript
+- Mailcatcher
+- Sendgrid
+- jBuilder
 
 Areas of improvement
 --------------------
@@ -44,7 +47,8 @@ How to run the program
 ```sh
 git clone https://github.com/juliatan/instagram
 cd instagram
-rails s
+mailcatcher
+bin/rails s
 ```
 
 Visit http://localhost:3000/posts in your browser.
